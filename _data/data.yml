@@ -151,6 +151,9 @@ skills:
 
       - name: Opencart
         level: 95%
+      
+      - name: SQL
+        level: 95%
 
       - name: HTML5 & CSS
         level: 95%
