@@ -38,11 +38,11 @@
       <vue-lightbox-advanced :items="images" />
     </div>
 
-    <h2>With Shuffle</h2>
+   <!--  <h2>With Shuffle</h2>
     <div class="fixheight">
-      <vue-lightbox-advanced :shuffle="true" shuffleBy="RANDOM" :items="images" />
+      <vue-lightbox-advanced shuffle="1" shuffleBy="RANDOM" :items="images" />
     </div>
-
+ -->
     <h2>With 3 column</h2>
     <div class="fixheight">
       <vue-lightbox-advanced :cells="3" :items="images" />
@@ -53,14 +53,14 @@
       <vue-lightbox-advanced @clicked:index="onClicked" :items="images" />
     </div>
 
-    <h2>With SRC</h2>
+<!--     <h2>With SRC</h2>
     <div class="fixheight">
       <vue-lightbox-advanced :returnSrc="true" @clicked:index="onClickedSrc" :items="images" />
-    </div>
+    </div> -->
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-  <script src="https://unpkg.com/vue-lightbox-advanced"></script>
+  <script src="https://unpkg.com/vue-lightbox-advanced@1.0.0/dist/VueLightboxAdvanced.min.js" type="text/javascript" ></script>
   <link defer href="https://unpkg.com/vue-lightbox-advanced@1.0.0/dist/VueLightboxAdvanced.css" rel="stylesheet" />
 </div>
 
