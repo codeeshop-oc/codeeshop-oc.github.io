@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<title>Vue Lightbox Advanced Code-E-Shop</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<style>
+.text-center {
+  text-align: center;
+  /*margin: auto;*/
+}
+.fixheight {
+  height: 350px;
+  width: 550px;
+}
+@media (max-width: 800px) {
+  .fixheight {
+    width: 450px;
+  }
+}
+@media (max-width: 576px) {
+  .fixheight {
+    width: 100%;
+  }
+}
+#app {
+  margin: auto;
+  display: table;
+}
+</style>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div id="app">
+    <h2>Default</h2>
+    <div class="fixheight">
+      <vue-lightbox-advanced :items="images" />
+    </div>
+
+    <h2>With Shuffle</h2>
+    <div class="fixheight">
+      <vue-lightbox-advanced :shuffle="true" shuffleBy="RANDOM" :items="images" />
+    </div>
+
+    <h2>With 3 column</h2>
+    <div class="fixheight">
+      <vue-lightbox-advanced :cells="3" :items="images" />
+    </div>
+
+    <h2>With Event</h2>
+    <div class="fixheight">
+      <vue-lightbox-advanced @clicked:index="onClicked" :items="images" />
+    </div>
+
+    <h2>With SRC</h2>
+    <div class="fixheight">
+      <vue-lightbox-advanced :returnSrc="true" @clicked:index="onClickedSrc" :items="images" />
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+  <script src="https://unpkg.com/vue-lightbox-advanced"></script>
+  <link defer href="https://unpkg.com/vue-lightbox-advanced@1.0.0/dist/VueLightboxAdvanced.css" rel="stylesheet" />
+</div>
+
+<script type="text/javascript">
+  var app5 = new Vue({
+    el: '#app',
+    data() {
+      return {
+        images: [
+            "https://i.wifegeek.com/200426/f9459c52.jpg",
+            "https://i.wifegeek.com/200426/5ce1e1c7.jpg",
+            "https://i.wifegeek.com/200426/5fa51df3.jpg",
+            "https://i.wifegeek.com/200426/663181fe.jpg",
+            "https://i.wifegeek.com/200426/2d110780.jpg",
+            "https://i.wifegeek.com/200426/e73cd3fa.jpg",
+            "https://i.wifegeek.com/200426/15160d6e.jpg",
+            "https://i.wifegeek.com/200426/d0c881ae.jpg",
+            "https://i.wifegeek.com/200426/a154fc3d.jpg",
+            "https://i.wifegeek.com/200426/71d3aa60.jpg",
+            "https://i.wifegeek.com/200426/d17ce9a0.jpg",
+            "https://i.wifegeek.com/200426/7c4deca9.jpg",
+            "https://i.wifegeek.com/200426/64672676.jpg",
+            "https://i.wifegeek.com/200426/de6ab9c6.jpg",
+            "https://i.wifegeek.com/200426/d8bcb6a7.jpg",
+            "https://i.wifegeek.com/200426/4085d03b.jpg",
+            "https://i.wifegeek.com/200426/177ef44c.jpg",
+            "https://i.wifegeek.com/200426/d74d9040.jpg",
+            "https://i.wifegeek.com/200426/81e24a47.jpg",
+            "https://i.wifegeek.com/200426/43e2e8bb.jpg"
+        ],
+      }
+    },
+    components: {
+      VueLightboxAdvanced
+    },
+    methods: {
+      onClicked(v) {
+        console.log(`Event Emmited....`)
+        console.log(`Return Index: ${v}`)
+      },
+      onClickedSrc(v) {
+        console.log(`Event Emmited....`)
+        console.log(`Return Value: ${v}`)
+      },
+    }
+  })
+</script>
+
+</body>
+</html>
