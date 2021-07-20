@@ -51,7 +51,7 @@ body {
 
     <h2>With 3 column</h2>
     <div class="fixheight">
-      <vue-lightbox-advanced :cells="3" :items="images" />
+      <vue-lightbox-advanced :cells="3" :items="images" shuffle="1" shuffle-by="DESC" />
     </div>
 
     <h2>With Event</h2>
@@ -91,38 +91,19 @@ body {
     data() {
       return {
         images: [
-            "https://pixabay.com/get/g97dcc21f688b654b7a183505360a63e7e653dcfd03efd52c6e69d6c706439a3fd093186477e21bd79a90ea3f3f97477e_640.jpg",
-            "https://pixabay.com/get/g03f7ea38d19adba36dbd6d1b1a442eab63bea27447cff195ab91226bf3ffdff4e5e0fdb555734da3892c8658f3cbc853_640.jpg",
-            "https://pixabay.com/get/g5890364deea7af2a721be94e3c0e3568536600a3fe2ecc76e38b7011dd057c675ef777db6d7ffc1c7077ab901b5ec128_640.jpg",
-            "https://pixabay.com/get/g86730076d0af84f8f5eef133f818083edc40ca0f6f65eef062cbe664322df503d015dbcec274fd4ca0098175499605fc_640.jpg",
-            "https://pixabay.com/get/g73e588348666b3fd34eba4a965787e6adbee94dd25d0f4528c9c46353cbf44769f37eb116e3e5ef45562530035a768a8_640.jpg",
-            "https://pixabay.com/get/g6c47f71b00a6063dd3472422a06d9c9f9bb516aa456fae066395baf7393d21b8285edc18b4df9b84d99828c40e140dd1_640.jpg",
-            "https://pixabay.com/get/g70750e825822f7f7937a0e203f737183f7fed733838ce826bedaef6b5ac84d2c32b3f390376679b3240c029e1c4dd918_640.jpg",
-            "https://pixabay.com/get/g74ba372d0ae165b138e30aa203a2abdaefe193ae14aa8f07456eabd08462fd1e1664a9210cbf4293ba240eaba75119a1_640.jpg",
-            "https://pixabay.com/get/ga71b77fb2065b3b4bf03a10b345ac728e76d7adea5dca3c3ff058387f783a6d9a05b91e5f4f454bcd6b58b424e10209f_640.jpg",
-            "https://pixabay.com/get/gc0305447fe456cc2d6b1d8ed8c410e973ea83c6b859880289fc94cc37f8ca7ee0a2fa6c60023f637790c2393edb19f7c_640.jpg",
-            "https://pixabay.com/get/g1f435f827402d562f48c08aea6cf61dac3ae0bf0616382f508b0aa3fea659e11f9edac7a6ce7d8ed7e8ffadc030c6997_640.jpg",
-            /*
-               "https://i.wifegeek.com/200426/5ce1e1c7.jpg",
-               "https://i.wifegeek.com/200426/5fa51df3.jpg",
-               "https://i.wifegeek.com/200426/663181fe.jpg",
-               "https://i.wifegeek.com/200426/2d110780.jpg",
-               "https://i.wifegeek.com/200426/e73cd3fa.jpg",
-               "https://i.wifegeek.com/200426/15160d6e.jpg",
-               "https://i.wifegeek.com/200426/d0c881ae.jpg",
-               "https://i.wifegeek.com/200426/a154fc3d.jpg",
-               "https://i.wifegeek.com/200426/71d3aa60.jpg",
-               "https://i.wifegeek.com/200426/d17ce9a0.jpg",
-               "https://i.wifegeek.com/200426/7c4deca9.jpg",
-               "https://i.wifegeek.com/200426/64672676.jpg",
-               "https://i.wifegeek.com/200426/de6ab9c6.jpg",
-               "https://i.wifegeek.com/200426/d8bcb6a7.jpg",
-               "https://i.wifegeek.com/200426/4085d03b.jpg",
-               "https://i.wifegeek.com/200426/177ef44c.jpg",
-               "https://i.wifegeek.com/200426/d74d9040.jpg",
-               "https://i.wifegeek.com/200426/81e24a47.jpg",
-               "https://i.wifegeek.com/200426/43e2e8bb.jpg"
-            */
+            "https://cdn.pixabay.com/photo/2015/09/17/14/24/woman-944261_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2015/10/30/20/13/boat-1014711_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/10/17/16/10/fantasy-2861107_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2016/05/11/16/32/bridge-1385938_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2018/09/19/23/03/sunset-3689760_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2020/09/15/09/10/church-5573087_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/05/04/12/43/zebra-2283914_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2018/01/25/14/12/nature-3106213_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/12/10/15/16/white-horse-3010129_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/06/07/10/47/elephant-2380009_960_720.jpg",
+            "https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg",
+            "https://pixabay.com/photos/boat-sea-sunrise-sunset-1014711/",
+            "https://cdn.pixabay.com/photo/2017/01/18/17/14/girl-1990347_960_720.jpg",
         ],
       }
     },
