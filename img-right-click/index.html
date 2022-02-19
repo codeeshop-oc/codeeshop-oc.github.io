@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Context Menu Add Right Click</title>
+  </head>
+  <body>
+    <center>    
+      <a onclick="showMessage('Left Clicked on Image')">
+        <img
+          data-href="https://github.com/codeeshop-oc"
+          width="300"
+          height="200"
+          src="https://cdn.pixabay.com/photo/2015/09/17/14/24/woman-944261_960_720.jpg"
+        />
+      </a>
+      <div>Right Click on Above Image to open link in new Tab</div>
+      <div>Remove the href from right click</div>
+      <div style="color: red" id="showClickedMessage"></div>
+    </center>
+  </body>
+</html>
+
+<script type="text/javascript">
+    function showMessage(text) {
+      document.getElementById('showClickedMessage').innerText = text      
+    }
+
+    window.oncontextmenu = function(e) {
+      showMessage('Right Clicked on Image')
+
+      let val
+      const ele = e.target
+
+      if (val = ele.getAttribute('data-href')) {
+        ele.parentElement.setAttribute('href', val)
+
+        mySetTimeout(() => {
+          ele.parentElement.removeAttribute('href')
+        }, 0)
+      }
+    }
+
+    window.mySetTimeout = function(func, delay) {
+      let timeout = setTimeout(function() {
+        func()
+        clearTimeout(timeout)
+      }, delay)
+    }
+</script>
