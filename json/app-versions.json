@@ -1,8 +1,10 @@
 {
   "lumpsumcalculator": {
-    "version": "3.0.0"
+    "version": "3.0.0",
+    "whats_new": "<b>1.Added Govt. Schemes</b>"
   },
   "cesplayer": {
-    "version": "1.0.0"
+    "version": "1.0.1",
+    "whats_new": "<b>1.New Hollywood Movies Added</b>"
   }
 }
