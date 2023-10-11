@@ -1,3 +1,8 @@
-[
-  {"app": "lumpsumcalculator", "version": "3.0.0"}
-]
+{
+  "lumpsumcalculator": {
+    "version": "3.0.0"
+  },
+  "cesplayer": {
+    "version": "1.0.0"
+  }
+}
