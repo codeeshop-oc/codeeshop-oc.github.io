@@ -1,29 +1,35 @@
 name: Auto-Approve Pull Requests from Specified Collaborator
-
+ 
 on:
-  pull_request:
+  pull_request_target: 
     branches:
       - main
+      
+  push:
+    branches:
+      - main
+      - test
+
+  workflow_dispatch:
+    inputs:
+      pullRequestNumber:
+        description: Pull request number to auto-approve
+        required: false
 
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
-
+    permissions:
+      pull-requests: write
     steps:
-      - uses: actions/github-script@v5
-
-        with:
-          script: |
-            const collaborators = ["codeeshop"];
-            console.log(context, 'context')
-            if (context.issue.pull_request.user && context.issue.pull_request.user.login in collaborators) {
-              github.issues.addComment({
-                issue_number: context.issue.number,
-                body: "Approved"
-              })
-
-              github.pulls.approveReview({
-                pull_number: context.issue.number,
-                review_id: context.issue.pull_request.reviews.nodes[0].id
-              })
-            }
+    - name: Test
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}              
+      run: |
+        echo "$CONTEXT"
+                
+    - uses: hmarr/auto-approve-action@v3
+      if: ${{ github.event.number && github.event.sender.login == 'codeeshop' }}
+      with:
+        pull-request-number: ${{ github.event.number }}   
+        review-message: "Auto approved PR"
