@@ -1,4 +1,4 @@
-name: Auto-Approve Pull Requests from Specified Collaborator
+name: Auto-Approve Pull Requests from Specified Collaborator 
  
 on:
   pull_request:
