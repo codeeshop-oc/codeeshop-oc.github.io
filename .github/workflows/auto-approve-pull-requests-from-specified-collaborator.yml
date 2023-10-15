@@ -1,5 +1,5 @@
 name: Auto-Approve Pull Requests from Specified Collaborator
-
+ 
 on:
   pull_request:
     branches:
@@ -18,6 +18,11 @@ jobs:
     permissions:
       pull-requests: write
     steps:
+    - name: Test
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}      
+      run: |
+        echo "$GITHUB_CONTEXT"
     - uses: hmarr/auto-approve-action@v3
       if: ${{ context.payload.pull_request.user && context.payload.pull_request.user.login == "codeeshop" }}
       with:
