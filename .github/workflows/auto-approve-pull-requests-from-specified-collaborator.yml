@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const collaborators = ["codeeshop"];
-
-            if (context.issue.pull_request.user.login in collaborators) {
+            console.log(context, 'context')
+            if (context.issue.pull_request.user && context.issue.pull_request.user.login in collaborators) {
               github.issues.addComment({
                 issue_number: context.issue.number,
                 body: "Approved"
