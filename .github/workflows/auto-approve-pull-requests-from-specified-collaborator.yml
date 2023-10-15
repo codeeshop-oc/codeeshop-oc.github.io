@@ -19,6 +19,6 @@ jobs:
       pull-requests: write
     steps:
     - uses: hmarr/auto-approve-action@v3
-      if: ${{ context.payload.pull_request.user && context.payload.pull_request.user.login in ["codeeshop"] }}
+      if: ${{ context.payload.pull_request.user && context.payload.pull_request.user.login == "codeeshop" }}
       with:
         pull-request-number: ${{ context.payload.pull_request.number }}
