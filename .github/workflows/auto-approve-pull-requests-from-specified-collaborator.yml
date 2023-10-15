@@ -1,0 +1,29 @@
+name: Auto-Approve Pull Requests from Specified Collaborator
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/github-script@v5
+
+        with:
+          script: |
+            const collaborators = ["codeeshop"];
+
+            if (context.issue.pull_request.user.login in collaborators) {
+              github.issues.addComment({
+                issue_number: context.issue.number,
+                body: "Approved"
+              })
+
+              github.pulls.approveReview({
+                pull_number: context.issue.number,
+                review_id: context.issue.pull_request.reviews.nodes[0].id
+              })
+            }
